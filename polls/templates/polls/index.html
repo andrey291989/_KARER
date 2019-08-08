@@ -1,0 +1,40 @@
+{% block content %}
+<p>Карер</p>
+<ul>
+
+    <table border="1">
+        <tr>
+            <td> Модель</td>
+            <td>
+
+                <select type="text" id="armatura_1">
+                    <option value="12">Билаз</option>
+                    <option value="14">Kamatsu</option>
+                    <option value="16">Все</option>
+                    <input type="button" value="Показать" onclick="addition();"> <!-- Кнопка -->
+                </select>
+            </td>
+    </table>
+
+
+    <br><br>
+    <table border="1" width="30%" cellpadding="5">
+        <tr>
+            <th>Номер</th>
+            <th>Модель</th>
+            <th>Грузоподьемность</th>
+            <th>Текущий вес</th>
+            <th>Перегруз (%)</th>
+        </tr>
+        {% for topic in topics %}
+        <tr>
+            <td>{{ topic.nomer }}</td>
+            <td>{{ topic.model }}</td>
+            <td>{{ topic.podemnost }}</td>
+            <td>{{ topic.zagrujennost }}</td>
+            <td>{{ topic.zapolnen }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</ul>
+{% endblock content %}
